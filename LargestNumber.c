@@ -2,39 +2,35 @@
 // This program finds the largest number in an array of integers.
 
 #include <stdio.h>
-#include <stdlib.h> 
+#define Size 5
+
+void getInput(int arr[], int size);  // Function prototype to get input from the user
+int findLargest(int arr[], int size);  // Function prototype to find the largest number
 
 int main()
 {
-    int Size;
 
-    printf("Enter the size of the array: ");
-    scanf("%d", &Size);
+    int arr[Size];  // Declare an array of fixed size
 
-    int *arr = (int *)malloc(Size * sizeof(int));
-    if (arr == NULL)
-    {
-        printf("Dynamic Memory allocation failed\n");
-        exit(0); // Exit if memory allocation fails
-    }
+    getInput(arr, Size);  // Function to get input from the user
 
+    printf("\nLargest element in the array is: %d\n", findLargest(arr, Size));  // Function to find the largest number
+    return 0;
+}
+
+void getInput(int arr[], int size) {
     printf("Enter numbers in the array: \n");
-    for (int i = 0; i < Size; i++)
-    {
-        scanf("%d", (arr + i));  // Using pointer arithmetic to write values
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
     }
+}
 
+int findLargest(int arr[], int size) {
     int largest = arr[0];
-    for (int i = 0; i < Size; i++)
-    {
-        if (arr[i] > largest)
-        {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > largest) {
             largest = arr[i];
         }
     }
-    printf("\nLargest element in the array is: %d\n", largest);
-
-    free(arr);  // Free the allocated memory
-    arr = NULL; // to avoid dangling pointer
-    return 0;
+    return largest;
 }

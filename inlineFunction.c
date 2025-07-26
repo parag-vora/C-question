@@ -4,6 +4,7 @@
 #include<stdio.h>
 
 int add(int a, int b); // Function prototype for inline function. it can be defined later. it work for both with and without optimization.
+// if the forward declaration is not present, then definition must be before the main function and compile it with -O1 or -O2 or -O3 optimization flags.
  
 
 int main(){

@@ -18,6 +18,7 @@ int main(){
         printf("%d ", ptr[i]);
     }
 
-    return 0;
-    
+
+
+    return 0;    
 }

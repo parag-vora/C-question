@@ -9,7 +9,9 @@ struct pointerToStructure
 
 
 int main(){
-
-    printf("Name : %s\nAge : %u", details.name, details.age);
+    printf("Student details via structure: \n");
+    printf("Name : %s\nAge : %u\n", details.name, details.age);
+    printf("Student details via pointet to structure: \n");
+    printf("Name: %s\nAge : %u\n", structPtr->name, structPtr->age);
     return 0;
 }
